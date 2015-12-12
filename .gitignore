@@ -1,0 +1,37 @@
+# Compiled object files
+*.ko
+*.o
+*.mod.*
+
+# Generated objects (source, executables, tarballs, etc.)
+a.out
+
+# Module files
+modules.order
+Module.symvers
+.*.cmd
+.tmp_versions
+
+# Vim swap files
+.*.swp
+
+# Autotools objects
+.deps
+.dirstamp
+.libs
+ar-lib
+autom4te.cache
+m4
+compile
+config.*
+configure
+depcomp
+install-sh
+libtool
+ltmain.sh
+missing
+Makefile
+Makefile.in
+*.la
+*.lo
+*.m4
