@@ -78,7 +78,19 @@ macro key LEDs. The format is as follows (in binary):
 
 ## Report ID 7
 
-Currently, the usage and format of this report is unknown.
+This report is used to control the brightness in a fine-grained manner. The
+values are encoded in little-endian order and range from 0 to 8192 (0x0000 -
+0x2000). The format is as follows:
+
+    07 XX XX YY YY
+     |  |  |  |  |
+     |  |  |  +--+-- Keyboard brightness
+     |  +--+-------- WASD/arrow brightness
+     +-------------- Report ID
+
+This brightness control is somewhat independent in that setting the brightness
+via this report doesn't change the brightness reported in the 0-4 scale, but
+using the brightness keys or report ID 8 will change the values in this report.
 
 ## Report ID 8
 
@@ -111,7 +123,9 @@ altogether. The format is as follows (in hex):
      +--------------------- Report ID
 
 Therefore, to disable the G keys and control them solely through interface 1, it
-seems sufficient to set the feature report with all zeroes.
+seems sufficient to set the feature report with all zeroes. The values are as
+described in the keyboard/keypad page in HID Usage Tables. This also means that
+the G keys can be used with modifiers such as Shift.
 
 ## Report ID 128
 
