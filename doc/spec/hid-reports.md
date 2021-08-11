@@ -10,7 +10,8 @@ known reports and characterizes them.
 Report ID 1 is the standard keyboard report - all standard key presses are sent
 through this report. If the G-keys are configured to behave as a standard key,
 then those keypresses are also sent through this report. This report is sent
-through interface 0, while all other reports are sent through interface 1.
+through interface 1 only for handling N-key rollover, when more than 6 keys are
+pressed at the same time. The first six key sare always reported through interface 0.
 
 ## Report ID 2
 
